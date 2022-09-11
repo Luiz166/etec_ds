@@ -15,10 +15,10 @@ class WelcomeScreen extends StatelessWidget {
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
                 colors: [Color(0xff5430F4), Color(0xffB4A4FA)])),
-        child: Column(children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           SvgPicture.asset(
             "assets/images/logo.svg",
-            width: 200,
+            width: MediaQuery.of(context).size.width * 0.85,
           )
         ]),
       ),
