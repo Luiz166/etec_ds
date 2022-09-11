@@ -1,6 +1,6 @@
+import 'package:etec_ds/components/welcome_block.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/parser.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,6 +19,14 @@ class WelcomeScreen extends StatelessWidget {
           SvgPicture.asset(
             "assets/images/logo.svg",
             width: MediaQuery.of(context).size.width * 0.85,
+            fit: BoxFit.scaleDown,
+          ),
+          const SizedBox(
+            height: 90,
+          ),
+          const WelcomeBlock(),
+          const SizedBox(
+            height: 30,
           )
         ]),
       ),
