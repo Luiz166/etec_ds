@@ -1,5 +1,3 @@
-import 'package:etec_ds/screens/register_screen.dart';
-import 'package:etec_ds/screens/welcome_screen.dart';
 import 'package:etec_ds/screens/splash.dart';
 import 'package:flutter/material.dart';
 

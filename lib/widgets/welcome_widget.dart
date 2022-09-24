@@ -1,3 +1,4 @@
+import 'package:etec_ds/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,7 +63,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _Button(() {
-              animationController.reverse();
+              animationController.reverse().whenComplete(() {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterScreen()));
+              });
             })
           ],
         )

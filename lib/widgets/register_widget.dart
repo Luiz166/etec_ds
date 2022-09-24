@@ -28,7 +28,7 @@ class RegisterForm extends StatelessWidget {
           ),
           TextFormField(
             decoration: InputDecoration(
-                fillColor: Color(0xfff1efef),
+                fillColor: const Color(0xfff1efef),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(25.0),
@@ -45,7 +45,7 @@ class RegisterForm extends StatelessWidget {
           ),
           TextFormField(
             decoration: InputDecoration(
-                fillColor: Color(0xfff1efef),
+                fillColor: const Color(0xfff1efef),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(25.0),
@@ -67,7 +67,7 @@ class RegisterForm extends StatelessWidget {
                 child: Container(
                     padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
                     decoration: BoxDecoration(
-                      color: Color(0xFF7455F6),
+                      color: const Color(0xFF7455F6),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(

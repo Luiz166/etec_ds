@@ -1,7 +1,5 @@
 import 'package:etec_ds/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
