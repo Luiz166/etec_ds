@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      title: 'ETEC - Desenvolvimento de Sistemas',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
