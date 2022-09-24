@@ -1,5 +1,5 @@
 import 'package:etec_ds/widgets/welcome_widget.dart';
-import 'package:etec_ds/utils/project_colors.dart';
+import 'package:etec_ds/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
