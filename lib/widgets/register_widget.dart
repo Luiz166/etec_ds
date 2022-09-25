@@ -29,6 +29,7 @@ class RegisterForm extends StatelessWidget {
           TextFormField(
             decoration: InputDecoration(
                 fillColor: const Color(0xfff1efef),
+                contentPadding: const EdgeInsets.all(20),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.circular(25.0),
@@ -44,7 +45,9 @@ class RegisterForm extends StatelessWidget {
             height: 20,
           ),
           TextFormField(
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(20),
                 fillColor: const Color(0xfff1efef),
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
