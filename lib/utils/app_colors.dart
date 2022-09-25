@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ProjectColors {
+class AppColors {
   static const backgroundGradient = LinearGradient(
       begin: Alignment.bottomLeft,
       end: Alignment.topRight,
