@@ -1,3 +1,4 @@
+import 'package:etec_ds/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -67,6 +68,12 @@ class RegisterForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()));
+                },
                 child: Container(
                     padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
                     decoration: BoxDecoration(
