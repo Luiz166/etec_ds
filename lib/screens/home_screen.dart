@@ -2,10 +2,16 @@ import 'package:etec_ds/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   // Gera o cumprimento de acordo com a hora do dia
   String getGreeting() {
     final now = DateTime.now();
@@ -23,6 +29,17 @@ class HomeScreen extends StatelessWidget {
     return greeting;
   }
 
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  late Future<String> _nome;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _nome =
+        _prefs.then((SharedPreferences prefs) => prefs.getString('nome') ?? '');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +55,22 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Ola (nome)',
-                style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 48),
-              ),
+              FutureBuilder(
+                  future: _nome,
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.waiting:
+                        return const CircularProgressIndicator();
+                      default:
+                        return Text(
+                          'Olá ${snapshot.data.toString().split(' ')[0]}',
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 48),
+                        );
+                    }
+                  }),
               Text(
                 getGreeting(),
                 style: GoogleFonts.montserrat(

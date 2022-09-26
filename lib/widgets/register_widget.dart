@@ -1,9 +1,19 @@
 import 'package:etec_ds/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterForm extends StatelessWidget {
-  const RegisterForm({super.key});
+  RegisterForm({super.key});
+
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  Future<void> _savePrefs(String nome) async {
+    final SharedPreferences prefs = await _prefs;
+    prefs.setString('nome', nome);
+  }
+
+  final TextEditingController nomeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +38,7 @@ class RegisterForm extends StatelessWidget {
             height: 60,
           ),
           TextFormField(
+            controller: nomeController,
             decoration: InputDecoration(
                 fillColor: const Color(0xfff1efef),
                 contentPadding: const EdgeInsets.all(20),
@@ -68,11 +79,12 @@ class RegisterForm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainScreen()));
+                onTap: () async {
+                  final navigator = Navigator.of(context);
+                  await _savePrefs(nomeController.text);
+
+                  navigator.push(MaterialPageRoute(
+                      builder: (context) => const MainScreen()));
                 },
                 child: Container(
                     padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),

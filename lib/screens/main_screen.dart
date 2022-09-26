@@ -52,20 +52,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-
- // bottomNavigationBar: Container(
-      //   padding: const EdgeInsets.symmetric(vertical: 8),
-      //   child: BottomNavigationBar(
-      //       elevation: 0,
-      //       onTap: _onItemTapped,
-      //       currentIndex: _selectedIndex,
-      //       type: BottomNavigationBarType.fixed,
-      //       selectedItemColor: Colors.amber[800],
-      //       unselectedItemColor: Colors.grey[500],
-      //       items: const <BottomNavigationBarItem>[
-      //         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      //         BottomNavigationBarItem(
-      //             icon: Icon(Icons.book), label: 'Matérias'),
-      //         BottomNavigationBarItem(
-      //             icon: Icon(Icons.question_mark), label: 'FAQ')
-      //       ]),
